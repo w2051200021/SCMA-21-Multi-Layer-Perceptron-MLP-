@@ -1,0 +1,16 @@
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\R09622009TEChangAss011.exe.config
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\R09622009TEChangAss011.exe
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\R09622009TEChangAss011.pdb
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.MainForm.resources
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.Properties.Resources.resources
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.csproj.GenerateResource.cache
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.exe
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.pdb
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\TEChangGALibrary.dll
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\TEChangGALibrary.pdb
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\TEChangGALibrary.xml
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\obj\Debug\R09622009TEChangAss011.csproj.CopyComplete
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\PSOLibrary.dll
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\R09622009TEChangAss011\bin\Debug\PSOLibrary.pdb

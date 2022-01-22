@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TEChangGALibrary</name>
+    </assembly>
+    <members>
+        <member name="M:TEChangGALibrary.BinaryGA.#ctor(System.Int32,TEChangGALibrary.OptimizationType,TEChangGALibrary.ObjectiveFunction{System.Byte},System.Windows.Forms.Panel)">
+            <summary>
+            Create a Binary GA Solver
+            </summary>
+            <param name="numberOfVariables"></param>
+            <param name="optimizationType"></param>
+            <param name="objectiveFunction"> The delegate of objective function. </param>
+        </member>
+        <member name="M:TEChangGALibrary.BinaryGA.MutateAParent(System.Int32,System.Int32,System.Boolean[])">
+            <summary>
+            An overriden version of "MutateAParent" in Binary GA.
+            </summary>
+            <param name="parentID"></param>
+            <param name="childID"></param>
+            <param name="mutatedFlag"></param>
+        </member>
+        <member name="M:TEChangGALibrary.GAMonitor`1.#ctor(TEChangGALibrary.GenericGASolver{`0})">
+            <summary>
+            The monitor of the GA solver.
+            </summary>
+            <param name="theGASolver"> A GA solver. </param>
+        </member>
+        <member name="F:TEChangGALibrary.GAMonitor`1.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GAMonitor`1.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:TEChangGALibrary.GAMonitor`1.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+            這個方法的內容。
+            </summary>
+        </member>
+        <member name="T:TEChangGALibrary.GenericGASolver`1">
+            <summary>
+            A template class for a generic genetic algorithm solver. It is used to be inheritted by the 
+            specific GAsolver, e.g., BinaryGA.
+            </summary>
+            <typeparam name="T"> Data type of each chromosome. </typeparam>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.randomizer">
+            <summary>
+            A random number generator.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.theMonitor">
+            <summary>
+            A monitor that we used to control the GUI items of GAMonitor.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.chromosomes">
+            <summary>
+            A jagged array T[population size][number of variables] contains the encoded solutions in GA with type T, e.g. byte.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.objectives">
+            <summary>
+            An array that contains the objectives of each chromosome.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.fitnessValues">
+            <summary>
+            An array that contains the fitness of each chromosome.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.soFarTheBestSolution">
+            <summary>
+            The chromosome that has the best objective value so far.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.soFarTheBestObjectiveValue">
+            <summary>
+            The best objectvie value so far.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.iterationBestObjective">
+            <summary>
+            The best objective value in the current iteration.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.iterationAverageObjective">
+            <summary>
+            The average obejective value in the current iteration.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.soFarTheBestIsUpdated">
+            <summary>
+            An bool variable used to check whether the best solution is updated.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.bestID">
+            <summary>
+            An integer index used to recored the position of the best solution.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.indices">
+            <summary>
+            An index array that repeatly used in most of the calculation, including crossover, mutation
+            and even selection.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.mutatedGenes">
+            <summary>
+            A jagged bool array repeatly used for recording the position of mutated genes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.selectedChromosomes">
+            <summary>
+            A jagged array repeatly used in gene-wise copy during selection to store the selected chromosomes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.selectedObjectives">
+            <summary>
+            An array repeatly used in gene-wise copy during selection to store the objective value of 
+            selected chromosomes. 
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.numberOfJobs">
+            <summary>
+            The number of jobs in the given problem.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.numberOfGenes">
+            <summary>
+            The number of genes corresponds to the given problem and type of encoding. In binary encoded GA,
+            it should be square of number of jobs.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.totalNumberOfChromosomes">
+            <summary>
+            Total number of chromosomes, including parents, crossover and mutated children. 
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.optimizationType">
+            <summary>
+            The optimization type of the given problem.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.objectiveFunction">
+            <summary>
+            The objective function in the given problem.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.leastFitnessFraction">
+            <summary>
+            A ratio related to lower bound of the fitness value.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.populationSize">
+            <summary>
+            The number of parent chromosomes in each generation. 
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.crossoverRate">
+            <summary>
+            A ratio related to the number of crossover children. Obviously, the higher it is, the more children we get. 
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.mutationRate">
+            <summary>
+            A ratio related to the number of mutated genes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.populationMutationRate">
+            <summary>
+            A ratio related to the number of muatated chromosomes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.mutationType">
+            <summary>
+            Type of mutation, including gene-number based and population number based mutation.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.selectionType">
+            <summary>
+            Type of selection, including deterministic and stochastic selection.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.rouletteWheel">
+            <summary>
+            A double array repeatly used to recored the relative probability in stochastic selection. 
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.iterationLimit">
+            <summary>
+            The maximal number of iteration in GA.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.iterationID">
+            <summary>
+            An index used to record the current state of iteration.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.numberOfCrossoverChildren">
+            <summary>
+            Number of crossovered children in each generation.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.GenericGASolver`1.numberOfMutatedChildern">
+            <summary>
+            Number of mutated children in each generation.
+            </summary>
+        </member>
+        <member name="E:TEChangGALibrary.GenericGASolver`1.AfterInitialization">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="E:TEChangGALibrary.GenericGASolver`1.AfterRunOneIteration">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="E:TEChangGALibrary.GenericGASolver`1.SoFarTheBestSolutionUpdated">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.OnAfterInitializatioin">
+            <summary>
+            Fire the AfterInitialization event.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.OnAfterRunOneIteration">
+            <summary>
+            Fire the OneIterationCompleted event.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.OnSoFarTheBestSolutionUpdated">
+            <summary>
+            Fire the SoFarTheBestSolutionUpdated event.
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.RunToEndButton">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.PopulationSize">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.CrossoverRate">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.MutationRate">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.PopulationMutationRate">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.LeastFitnessFraction">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.MutationType">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.SelectionType">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="P:TEChangGALibrary.GenericGASolver`1.MaxIteration">
+            <summary>
+            ...
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.#ctor(System.Int32,TEChangGALibrary.OptimizationType,TEChangGALibrary.ObjectiveFunction{`0},System.Windows.Forms.Panel)">
+            <summary>
+            A Generic GA Solver.
+            </summary>
+            <param name="numberOfVariables"> Number of variables (genes) </param>
+            <param name="optimizationType"> Type of optimization </param>
+            <param name="objectiveFunction"> The objective function corresponds to the problem </param>
+            <param name="hostPanelForMonitor"> The panel used to contain the monitor </param>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.findExtremeValue(System.Double[],System.Boolean)">
+            <summary>
+            A function that helps to search the extreme value.
+            </summary>
+            <param name="objectives"> A double array we wanted to search. </param>
+            <param name="findMax"> If true, find the maximum, otherwise, find the minimum. </param>
+            <returns></returns>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.setFitnessFromObjectives">
+            <summary>
+            Transform the objective value to the fitness value.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.ShuffleAnArray(System.Int32[],System.Int32)">
+            <summary>
+            Shuffle an array with am upper limit.
+            </summary>
+            <param name="array"> An int array we want to shuffle.  </param>
+            <param name="limit"> The upper limit of the shuffle. </param>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.Reset">
+            <summary>
+            Reset everything of the GA.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.InitializePopulation">
+            <summary>
+            Initializa the population, overriden in each specific GA.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.RunOneIteration">
+            <summary>
+            Run one iteration, including crossover, mutation and selection.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.CrossoverAPairParent(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Crossover a pair of parents, overriden in each specific GA.
+            </summary>
+            <param name="father"></param>
+            <param name="mother"></param>
+            <param name="child1"></param>
+            <param name="child2"></param>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.PerformMutationOperation">
+            <summary>
+            Perform a mutaion operation.
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.MutateAParent(System.Int32,System.Int32,System.Boolean[])">
+            <summary>
+            Perform mutation operation on a specific parent and generate a mutated child.
+            </summary>
+            <param name="parentID"></param>
+            <param name="childID"></param>
+            <param name="mutatedFlag"></param>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.PerformSelectionOperation">
+            <summary>
+            Perform the chromosome selection, whether "Deterministic" or "Stochastic".
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.GenericGASolver`1.RunToEnd">
+            <summary>
+            Rather than run a single iteration, run to the user defined limiting iterations.
+            </summary>
+        </member>
+        <member name="T:TEChangGALibrary.OptimizationType">
+            <summary>
+            The optimization type.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.OptimizationType.Minimization">
+            <summary>
+            The minimization problem.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.OptimizationType.Maximization">
+            <summary>
+            The maximization problem.
+            </summary>
+        </member>
+        <member name="T:TEChangGALibrary.MutationMode">
+            <summary>
+            The mutation operation mode
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.MutationMode.GeneNumberBased">
+            <summary>
+            The mutation rate is based on the number of genes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.MutationMode.PopulationSizeBased">
+            <summary>
+            The mutation rate is based on the number of population.
+            </summary>
+        </member>
+        <member name="T:TEChangGALibrary.SelectionMode">
+            <summary>
+            The selection mode.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.SelectionMode.Deterministic">
+            <summary>
+            Select the top N chromosomes.
+            </summary>
+        </member>
+        <member name="F:TEChangGALibrary.SelectionMode.Stochastic">
+            <summary>
+            Select by relative probability (fitness)
+            </summary>
+        </member>
+        <member name="T:TEChangGALibrary.ObjectiveFunction`1">
+            <summary>
+            A delegation for objective function (in order to send a function as a parameter)
+            </summary>
+            <typeparam name="T"> Data type of chromosomes, e.g. binary, real, ... </typeparam>
+            <param name="aSolution"> A single chromosome. </param>
+            <returns> objective value </returns>
+        </member>
+        <member name="M:TEChangGALibrary.PermutationGA.#ctor(System.Int32,TEChangGALibrary.OptimizationType,TEChangGALibrary.ObjectiveFunction{System.Int32},System.Windows.Forms.Panel)">
+            <summary>
+            
+            </summary>
+            <param name="numberOfVariables"></param>
+            <param name="optimizationType"></param>
+            <param name="objectiveFunction"></param>
+            <param name="hostPanelForGAMonitor"></param>
+        </member>
+        <member name="T:TEChangGALibrary.PermutationGA.PermutationCrossoverOperator">
+            <summary>
+            Canonical crossover operators,
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.RealNumberEncodedGA.#ctor(System.Int32,System.Double[],System.Double[],TEChangGALibrary.OptimizationType,TEChangGALibrary.ObjectiveFunction{System.Double},System.Windows.Forms.Panel)">
+            <summary>
+            
+            </summary>
+            <param name="numberOfVariables"></param>
+            <param name="lowerBounds"></param>
+            <param name="upperBounds"></param>
+            <param name="optimizationType"></param>
+            <param name="objectiveFunction"></param>
+            <param name="hostPanelForGAMonitor"></param>
+        </member>
+        <member name="M:TEChangGALibrary.BFMonitor.#ctor(TEChangGALibrary.BrutalForceMethod)">
+            <summary>
+            The monitor of brutal force method.
+            </summary>
+            <param name="brutalForceMethod"> A brutal force method </param>
+        </member>
+        <member name="F:TEChangGALibrary.BFMonitor.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:TEChangGALibrary.BFMonitor.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:TEChangGALibrary.BFMonitor.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+            這個方法的內容。
+            </summary>
+        </member>
+    </members>
+</doc>

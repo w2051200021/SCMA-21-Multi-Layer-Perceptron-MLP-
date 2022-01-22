@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\bin\Debug\PSOLibrary.dll
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\bin\Debug\PSOLibrary.pdb
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\obj\Debug\PSOLibrary.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\obj\Debug\PSOLibrary.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\obj\Debug\PSOLibrary.dll
+C:\Users\user\Desktop\PhD\110-1\Soft Computing Methods and Applications\Homework 11\R09622009TEChangAss011Solution\PSOLibrary\obj\Debug\PSOLibrary.pdb
